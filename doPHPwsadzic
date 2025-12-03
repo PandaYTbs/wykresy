@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        body {
+            background-color: #000;
+        }
+        input {
+            margin: 5px;
+        }
+        #logoBaner {
+            background-color: #f00;
+            width: 90%;
+            height: 270px;
+            margin-left: 5%;
+        }
+        .createLogin {
+            background-color: #ddd;
+            height: 70px;
+            width: 45%;
+            float: left;
+            text-align: center;
+            margin-top: 200px;
+        }
+        .createLogin p{
+            margin-top: 20px;
+            font-size: 25px;
+            font-family: sans-serif;
+        }
+        #login {
+            margin-left: 5%;
+        }
+        #container {
+            background-color: #FFF;
+            width: 100%;
+            height: 956px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        input  {
+            height: 25px;
+            width: 300px;
+        }
+        #LoginInput {
+            height: 25px;
+            width: 100px;
+            background-color: #00f;
+            color: #fff;
+        }
+        a {
+            margin-left: 85px;
+            text-decoration: underline;
+            font-style: italic;
+        }
+        #circleLogo {
+            background-color: #000;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        #content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div id="logoBaner">
+        <div class="createLogin" id="login" onclick="colorChangeCreate()">
+            <p>Login</p>
+        </div>
+        <div class="createLogin" id="create" onclick="colorChangeLogin()">
+            <p>Create Account</p>
+        </div>
+    </div>
+
+    <div id="container">
+        <div id="content" >
+            <div id="circleLogo"></div>
+            <form action="index.php" method="GET" name="form">
+                <input type="text"  name="emailInput" placeholder="email"><br>
+                <input type="password"  name="passwordInput" placeholder="password"><br>
+                <input type="submit" value="Login" id="LoginInput">
+                <a>Forgot password</a>
+            </form>
+        </div>
+    </div>
+    
+    <div id="footer">
+
+    </div>
+</body>
+    <script>
+        function colorChangeCreate() {
+            document.getElementById("create").style.backgroundColor = "#000";
+            document.getElementById("create").style.color = "#fff";
+            document.getElementById("login").style.backgroundColor = "#ddd";
+            document.getElementById("login").style.color = "#000";
+
+            this.parentNode.style.display = 'none';
+
+        }
+        function colorChangeLogin() {
+            document.getElementById("login").style.backgroundColor = "#000";
+            document.getElementById("login").style.color = "#fff";
+            document.getElementById("create").style.backgroundColor = "#ddd";
+            document.getElementById("create").style.color = "#000";
+        }
+    </script>
+</html>
+
+<?php 
+    if (!empty($_GET["form"])) {
+
+    }
+?>
+
