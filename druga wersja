@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        body {
+            background-color: #000;
+        }
+        input {
+            margin: 5px;
+        }
+        #logoBaner {
+            display: center;
+            width: 100%;
+            height: 270px;
+            align-items: center;
+            justify-content: center;
+            background: url("image.jpg")
+        }
+        .createLogin {
+            background-color: #000;
+            height: 70px;
+            width: 800px;
+            float: left;
+            text-align: center;
+            margin-top: 200px;
+            color: #ddd;
+        }
+        .createLogin p{
+            margin-top: 20px;
+            font-size: 25px;
+            font-family: sans-serif;
+        }
+        #login {
+            margin-left: 5%;
+            color: #000;
+            background-color: #ddd;
+        }
+        #container {
+            background-color: #FFF;
+            width: 100%;
+            height: 956px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        input  {
+            height: 25px;
+            width: 300px;
+        }
+        #LoginInput {
+            height: 25px;
+            width: 100px;
+            background-color: #00f;
+            color: #fff;
+        }
+        #createAccount {
+            height: 25px;
+            width: 308px;
+            background-color: #00f;
+            color: #fff;
+        }
+        a {
+            margin-left: 85px;
+            text-decoration: underline;
+            font-style: italic;
+        }
+        #circleLogo {
+            background-color: #000;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        #contentCreate, #contentLogin {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div id="logoBaner">
+        <div class="createLogin" id="login" onclick="colorChangeLogin()">
+            <p>Login</p>
+        </div>
+        <div class="createLogin" id="create" onclick="colorChangeCreate()">
+            <p>Create Account</p>
+        </div>
+    </div>
+
+    <div id="container">
+        <div id="contentLogin" >
+            <div id="circleLogo"></div>
+            <form action="index.php" method="GET" name="form">
+                <input type="text"  name="emailInput" placeholder="email"><br>
+                <input type="password"  name="passwordInput" placeholder="password"><br>
+                <input type="submit" value="Create account" id="createAccount">
+            </form>
+        </div>
+
+        <div id="contentCreate" >
+            <div id="circleLogo"></div>
+            <form action="index.php" method="GET" name="form">
+                <input type="text"  name="emailInput" placeholder="email"><br>
+                <input type="password"  name="passwordInput" placeholder="password"><br>
+                <input type="submit" value="Login" id="LoginInput">
+                <a>Forgot password</a>
+            </form>
+        </div>
+    </div>
+    
+    <div id="footer">
+
+    </div>
+</body>
+    <script>
+
+        let formHide = document.getElementById("contentLogin");
+        formHide.style.display= "none";
+
+        function colorChangeCreate() {
+            document.getElementById("login").style.backgroundColor = "#000";
+            document.getElementById("login").style.color = "#ddd";
+            document.getElementById("create").style.backgroundColor = "#ddd";
+            document.getElementById("create").style.color = "#000";
+
+            let contentLoginHide = document.getElementById("contentLogin");
+            contentLoginHide.style.display= "";
+
+            let contentCreateHide = document.getElementById("contentCreate");
+            contentCreateHide.style.display= "none";
+        }
+        function colorChangeLogin() {
+            document.getElementById("create").style.backgroundColor = "#000";
+            document.getElementById("create").style.color = "#ddd";
+            document.getElementById("login").style.backgroundColor = "#ddd";
+            document.getElementById("login").style.color = "#000";
+
+            let formHide = document.getElementById("contentLogin");
+            formHide.style.display= "none";
+
+            let contentCreateHide = document.getElementById("contentCreate");
+            contentCreateHide.style.display= "";
+        }
+    </script>
+</html>
+
+<?php 
+    if (!empty($_GET["form"])) {
+
+    }
+?>
+
